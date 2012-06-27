@@ -43,3 +43,9 @@ endfunction
 nnoremap <silent> <Leader>f :CtrlP<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>r :CtrlPMRU<CR>
+
+autocmd VimLeave * :SessionSave
+let g:SessionSaveDirectory="$HOME/.vimsessions"
+let g:SessionFilePrefix=""
+let g:SessionFileSuffix=".vim"
+let g:SessionConfirmOverwrite=0
