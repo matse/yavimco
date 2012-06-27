@@ -49,3 +49,8 @@ let g:SessionSaveDirectory="$HOME/.vimsessions"
 let g:SessionFilePrefix=""
 let g:SessionFileSuffix=".vim"
 let g:SessionConfirmOverwrite=0
+
+nnoremap <silent> <Leader>t :TlistToggle<CR>
+let Tlist_Close_On_Select = 1
+let Tlist_Process_File_Always = 1
+let Tlist_GainFocus_On_ToggleOpen = 1

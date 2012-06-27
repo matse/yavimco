@@ -16,3 +16,6 @@
 [submodule "bundle/session_dialog"]
 	path = bundle/session_dialog
 	url = git://github.com/vim-scripts/session_dialog.vim.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
