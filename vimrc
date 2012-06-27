@@ -67,3 +67,18 @@ nnoremap <silent> <Leader>l gt
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+function! SuperCleverTab()
+if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+  return "\<Tab>"
+else
+  if &omnifunc != ''
+    return "\<C-X>\<C-O>"
+  elseif &dictionary != ''
+    return "\<C-K>"
+  else
+    return "\<C-N>"
+  endif
+endif
+endfunction
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>
