@@ -7,3 +7,6 @@
 [submodule "bundle/vimoutliner"]
 	path = bundle/vimoutliner
 	url = git://github.com/vimoutliner/vimoutliner.git
+[submodule "bundle/Vicle"]
+	path = bundle/Vicle
+	url = git://github.com/vim-scripts/Vicle.git

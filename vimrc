@@ -30,3 +30,6 @@ set laststatus=2
 let g:Powerline_symbols='fancy'
 set noshowmode
 set guifont=Menlo\ for\ Powerline:h12
+
+let g:vicle_session_name    = 'vicle'
+let g:vicle_session_window  = '0'
