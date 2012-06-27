@@ -33,3 +33,9 @@ set guifont=Menlo\ for\ Powerline:h12
 
 let g:vicle_session_name    = 'vicle'
 let g:vicle_session_window  = '0'
+
+command! Execl call <SID>ExecuteCurrentLine()
+silent! nnoremap <unique> <silent> <Leader>e :Execl<CR>
+function! s:ExecuteCurrentLine()
+  execute '!' . getline('.')
+endfunction
