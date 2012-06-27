@@ -39,3 +39,7 @@ silent! nnoremap <unique> <silent> <Leader>e :Execl<CR>
 function! s:ExecuteCurrentLine()
   execute '!' . getline('.')
 endfunction
+
+nnoremap <silent> <Leader>f :CtrlP<CR>
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>r :CtrlPMRU<CR>
