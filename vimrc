@@ -25,3 +25,8 @@ if has("gui_running")
   set guioptions-=L
   set guioptions+=c
 endif
+
+set laststatus=2
+let g:Powerline_symbols='fancy'
+set noshowmode
+set guifont=Menlo\ for\ Powerline:h12
