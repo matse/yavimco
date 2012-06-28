@@ -82,3 +82,20 @@ else
 endif
 endfunction
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+
+" Auto compile .haml files on save, but only
+" if there's a .autocompilehaml file in the cwd.
+" Depends on a `haml` executable. `sudo gem install haml`
+
+au BufWritePost *.haml call HamlMake()
+
+function! HamlMake()
+ruby << EOF
+in_file = VIM::Buffer.current.name
+dirname = File.dirname in_file
+if File.exists? dirname + "/.autohaml"
+  out_file = in_file[0..-6] + ".html"
+  VIM::command "silent !haml --require coffee-filter #{in_file} #{out_file}"
+end
+EOF
+endfunction
