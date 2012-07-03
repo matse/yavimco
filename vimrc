@@ -29,7 +29,14 @@ endif
 set laststatus=2
 let g:Powerline_symbols='fancy'
 set noshowmode
-set guifont=Menlo\ for\ Powerline:h12
+
+if has('mac')
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+elseif has('unix')
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+else
+  set guifont=DejaVu_Sans_Mono_for_Powerline:h12
+endif
 
 let g:vicle_session_name    = 'vicle'
 let g:vicle_session_window  = '0'
@@ -99,3 +106,7 @@ if File.exists? dirname + "/.autohaml"
 end
 EOF
 endfunction
+
+if filereadable(".vimrc.local")
+    source .vimrc.local
+endif
