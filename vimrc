@@ -64,6 +64,8 @@ if has("gui_running")
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+  nnoremap <silent> <Leader>g <c-]>
+  nnoremap <silent> <Leader>c <c-w><c-o>
   function! SuperCleverTab()
   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
     return "\<Tab>"
