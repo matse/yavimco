@@ -37,7 +37,9 @@ if has("gui_running")
   elseif has('unix')
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
   endif
-  autocmd VimLeave * :SessionSave
+	if argc() == 0
+    autocmd VimLeave * :SessionSave
+  endif
   let g:SessionSaveDirectory="$HOME/.vimsessions"
   let g:SessionFilePrefix=""
   let g:SessionFileSuffix=".vim"
