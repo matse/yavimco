@@ -68,8 +68,13 @@ if has("gui_running")
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
   nnoremap <silent> <Leader>g <c-]>
   nnoremap <silent> <Leader>c <c-w><c-o>
-  nnoremap  <silent> <Leader>ri :call ri#OpenSearchPrompt(0)<cr>
-  nnoremap  <silent> <Leader>rk :call ri#LookupNameUnderCursor()<cr>
+  nnoremap <silent> <Leader>ri :call ri#OpenSearchPrompt(0)<cr>
+  nnoremap <silent> <Leader>rk :call ri#LookupNameUnderCursor()<cr>
+
+  let g:RspecKeymap=0
+  nnoremap <silent> <Leader>ss :RunSpec<CR>
+  nnoremap <silent> <Leader>sl :RunSpecLine<CR>
+  nnoremap <silent> <Leader>sr :RerunSpec<CR>
 
   function! SuperCleverTab()
   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
