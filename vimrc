@@ -37,7 +37,9 @@ if has("gui_running")
   elseif has('unix')
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
   endif
-  autocmd VimLeave * :SessionSave
+	if argc() == 0
+    autocmd VimLeave * :SessionSave
+  endif
   let g:SessionSaveDirectory="$HOME/.vimsessions"
   let g:SessionFilePrefix=""
   let g:SessionFileSuffix=".vim"
@@ -52,7 +54,7 @@ if has("gui_running")
   endfunction
   nnoremap <silent> <Leader>f :CtrlP<CR>
   nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
-  nnoremap <silent> <Leader>r :CtrlPMRU<CR>
+  nnoremap <silent> <Leader>fr :CtrlPMRU<CR>
   nnoremap <silent> <Leader>t :TlistToggle<CR>
   let Tlist_Close_On_Select = 1
   let Tlist_Process_File_Always = 1
@@ -64,6 +66,16 @@ if has("gui_running")
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+  nnoremap <silent> <Leader>g <c-]>
+  nnoremap <silent> <Leader>c <c-w><c-o>
+  nnoremap <silent> <Leader>ri :call ri#OpenSearchPrompt(0)<cr>
+  nnoremap <silent> <Leader>rk :call ri#LookupNameUnderCursor()<cr>
+
+  let g:RspecKeymap=0
+  nnoremap <silent> <Leader>ss :RunSpec<CR>
+  nnoremap <silent> <Leader>sl :RunSpecLine<CR>
+  nnoremap <silent> <Leader>sr :RerunSpec<CR>
+
   function! SuperCleverTab()
   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
     return "\<Tab>"
